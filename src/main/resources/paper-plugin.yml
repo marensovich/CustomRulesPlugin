@@ -1,0 +1,4 @@
+name: CustomRulesPlugin
+version: '1.0-SNAPSHOT'
+main: org.marensovich.customRulesPlugin.CustomRulesPlugin
+api-version: '1.21'
