@@ -47,6 +47,7 @@ public class RulesCommand extends BukkitCommand {
             if (sender.hasPermission("customrules.reload")) {
                 try {
                     CustomRulesPlugin.getInstance().reloadConfig();
+                    CustomRulesPlugin.getInstance().reloadRulesConfig();
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
                             Objects.requireNonNull(CustomRulesPlugin.getInstance().getConfig().getString("plugin-prefix"))) +
                             ChatColor.translateAlternateColorCodes('&',
