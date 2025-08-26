@@ -5,16 +5,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.marensovich.customRulesPlugin.Commands.RulesCommand;
 import org.marensovich.customRulesPlugin.Listeners.ServerJoinListener;
 
-
 public final class CustomRulesPlugin extends JavaPlugin {
 
     private static CustomRulesPlugin instance;
 
     private FileConfiguration config;
-
-    CustomRulesPlugin(){
-        instance = this;
-    }
 
     public static CustomRulesPlugin getInstance() {
         return instance;
@@ -30,9 +25,9 @@ public final class CustomRulesPlugin extends JavaPlugin {
         this.config = super.getConfig();
     }
 
-
     @Override
     public void onEnable() {
+        instance = this;
         saveDefaultConfig();
         reloadConfig();
         getLogger().info("CustomRules plugin enabled");
@@ -61,5 +56,7 @@ public final class CustomRulesPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("CustomRules plugin disabled");
+        instance = null;
     }
+
 }

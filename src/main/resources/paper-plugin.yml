@@ -1,7 +1,16 @@
 name: CustomRulesPlugin
 version: '1.0-SNAPSHOT'
 main: org.marensovich.customRulesPlugin.CustomRulesPlugin
+bootstrapper: org.marensovich.customRulesPlugin.Bootstrap.Bootstrap
 api-version: '1.21'
+authors:
+  - marensovich
+prefix: CustomRulesPlugin
+description: Custom rules for new players
+website: t.me/son_of_dev228
+load: POSTWORLD
+contributors:
+  - lightneron
 permissions:
   customrules.use:
     description: "Позволяет использовать команду /rules"
