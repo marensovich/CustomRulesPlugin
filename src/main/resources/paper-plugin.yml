@@ -1,7 +1,6 @@
 name: CustomRulesPlugin
 version: '1.0-SNAPSHOT'
 main: org.marensovich.customRulesPlugin.CustomRulesPlugin
-bootstrapper: org.marensovich.customRulesPlugin.Bootstrap.Bootstrap
 api-version: '1.21'
 authors:
   - marensovich

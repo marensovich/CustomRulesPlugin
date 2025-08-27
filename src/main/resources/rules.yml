@@ -1,0 +1,37 @@
+title:
+  text: "Server Rules"
+#  BLACK_VALUE = 0x000000;
+#  DARK_BLUE_VALUE = 0x0000aa;
+#  DARK_GREEN_VALUE = 0x00aa00;
+#  DARK_AQUA_VALUE = 0x00aaaa;
+#  DARK_RED_VALUE = 0xaa0000;
+#  DARK_PURPLE_VALUE = 0xaa00aa;
+#  GOLD_VALUE = 0xffaa00;
+#  GRAY_VALUE = 0xaaaaaa;
+#  DARK_GRAY_VALUE = 0x555555;
+#  BLUE_VALUE = 0x5555ff;
+#  GREEN_VALUE = 0x55ff55;
+#  AQUA_VALUE = 0x55ffff;
+#  RED_VALUE = 0xff5555;
+#  LIGHT_PURPLE_VALUE = 0xff55ff;
+#  YELLOW_VALUE = 0xffff55;
+#  WHITE_VALUE = 0xffffff;
+  color: "0xffaa00"
+
+body:
+  block1:
+    text:
+      - "Добро пожаловать на сервер!"
+      - "Для игры на нашем сервере вы должны принять правила."
+    color: "#FFFFFF"
+  block2:
+    text: "Нажмите 'Принять', чтобы согласиться с правилами."
+    color: "#AAAAFF"
+
+buttons:
+  accept:
+    text: "✓ Принять"
+    color: "#00FF00"
+  deny:
+    text: "✗ Отклонить"
+    color: "#FF0000"
