@@ -5,6 +5,8 @@ import io.papermc.paper.event.connection.configuration.AsyncPlayerConnectionConf
 import io.papermc.paper.event.player.PlayerCustomClickEvent;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.marensovich.customRulesPlugin.CustomRulesPlugin;
@@ -24,9 +26,11 @@ public class ServerJoinListener implements Listener {
         awaitingResponse.put(event.getConnection(), response);
         event.getConnection().getAudience().showDialog(JoinDialog.getDialog());
         if (!response.join()) {
-            event.getConnection().disconnect(Component.text(Objects.requireNonNull(
-                    CustomRulesPlugin.getInstance().getConfig().getString("no-rules"))
-            ));
+            event.getConnection().disconnect(
+                    LegacyComponentSerializer.legacyAmpersand().deserialize(
+                            Objects.requireNonNull(CustomRulesPlugin.getInstance().getConfig().getString("no-rules"))
+                    )
+            );
         }
         awaitingResponse.remove(event.getConnection());
     }
