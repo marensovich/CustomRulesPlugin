@@ -56,7 +56,7 @@ Manage plugin rules.
     <h2 align="center">⚙ Configuration</h2>
 </div>
 
-### `Check config.yml and rules.yml files`
+`Check config.yml and rules.yml files`
 
 ---
 
