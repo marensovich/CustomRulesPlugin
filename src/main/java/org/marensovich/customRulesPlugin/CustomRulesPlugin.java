@@ -1,39 +1,35 @@
 package org.marensovich.customRulesPlugin;
 
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.marensovich.customRulesPlugin.Commands.RulesCommand;
 import org.marensovich.customRulesPlugin.Listeners.ServerJoinListener;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Objects;
-
 public final class CustomRulesPlugin extends JavaPlugin {
 
     private static CustomRulesPlugin instance;
-    private FileConfiguration rulesConfiguration;
-    private File rulesConfigFile;
+
+    private FileConfiguration config;
 
     public static CustomRulesPlugin getInstance() {
         return instance;
     }
 
-    public FileConfiguration getRulesConfiguration() {
-        return rulesConfiguration;
+    public FileConfiguration getConfig() {
+        return config;
+    }
+
+    @Override
+    public void reloadConfig() {
+        super.reloadConfig();
+        this.config = super.getConfig();
     }
 
     @Override
     public void onEnable() {
         instance = this;
-
         saveDefaultConfig();
         reloadConfig();
-
-        createRulesConfiguration();
-
         getLogger().info("CustomRules plugin enabled");
 
         registerCommands();
@@ -51,41 +47,16 @@ public final class CustomRulesPlugin extends JavaPlugin {
         }
 
         RulesCommand rulesCommand = new RulesCommand();
-        getServer().getCommandMap().register("rules", rulesCommand);
+        getServer().getCommandMap().register("customrules", rulesCommand);
 
+        getLogger().info("Команда /rules успешно зарегистрирована");
     }
 
-    private void createRulesConfiguration() {
-        rulesConfigFile = new File(getDataFolder(), "rules.yml");
-
-        if (!rulesConfigFile.exists()) {
-            saveResource("rules.yml", false);
-        }
-
-        rulesConfiguration = new YamlConfiguration();
-        try {
-            rulesConfiguration.load(rulesConfigFile);
-            getLogger().info("rules.yml успешно загружен");
-        } catch (IOException | InvalidConfigurationException e) {
-            getLogger().severe("Не удалось загрузить rules.yml: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
-    public void reloadRulesConfig() {
-        if (rulesConfigFile != null && rulesConfigFile.exists()) {
-            try {
-                rulesConfiguration.load(rulesConfigFile);
-                getLogger().info("rules.yml перезагружен");
-            } catch (IOException | InvalidConfigurationException e) {
-                getLogger().severe("Не удалось перезагрузить rules.yml: " + e.getMessage());
-            }
-        }
-    }
 
     @Override
     public void onDisable() {
         getLogger().info("CustomRules plugin disabled");
         instance = null;
     }
+
 }
