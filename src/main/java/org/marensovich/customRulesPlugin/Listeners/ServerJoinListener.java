@@ -6,7 +6,6 @@ import io.papermc.paper.event.player.PlayerCustomClickEvent;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.marensovich.customRulesPlugin.CustomRulesPlugin;

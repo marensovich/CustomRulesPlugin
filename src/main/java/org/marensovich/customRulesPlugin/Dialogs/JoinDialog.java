@@ -14,15 +14,16 @@ import org.marensovich.customRulesPlugin.CustomRulesPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class JoinDialog {
 
     public static Dialog getDialog() {
         FileConfiguration rules = CustomRulesPlugin.getInstance().getRulesConfig();
 
-        String titleText = rules.getString("title.text", "Правила сервера");
-        String titleColor = rules.getString("title.color", "#FFFFFF");
-        Component title = Component.text(titleText, TextColor.fromHexString(titleColor));
+        String titleText = rules.getString("title.text");
+        String titleColor = rules.getString("title.color");
+        Component title = Component.text(Objects.requireNonNull(titleText), TextColor.fromHexString(Objects.requireNonNull(titleColor)));
 
         List<DialogBody> bodyLines = new ArrayList<>();
         rules.getConfigurationSection("body").getKeys(false).forEach(blockKey -> {
@@ -44,19 +45,19 @@ public class JoinDialog {
             }
         });
 
-        String acceptText = rules.getString("buttons.accept.text", "✓ Принять");
-        String acceptColor = rules.getString("buttons.accept.color", "#00FF00");
-        String denyText = rules.getString("buttons.deny.text", "✗ Отклонить");
-        String denyColor = rules.getString("buttons.deny.color", "#FF0000");
+        String acceptText = rules.getString("buttons.accept.text");
+        String acceptColor = rules.getString("buttons.accept.color");
+        String denyText = rules.getString("buttons.deny.text");
+        String denyColor = rules.getString("buttons.deny.color");
 
         ActionButton acceptButton = ActionButton.builder(
-                        Component.text(acceptText, TextColor.fromHexString(acceptColor))
+                        Component.text(Objects.requireNonNull(acceptText), TextColor.fromHexString(Objects.requireNonNull(acceptColor)))
                 )
                 .action(DialogAction.customClick(Key.key("customrules:accept"), null))
                 .build();
 
         ActionButton denyButton = ActionButton.builder(
-                        Component.text(denyText, TextColor.fromHexString(denyColor))
+                        Component.text(Objects.requireNonNull(denyText), TextColor.fromHexString(Objects.requireNonNull(denyColor)))
                 )
                 .action(DialogAction.customClick(Key.key("customrules:deny"), null))
                 .build();

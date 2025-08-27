@@ -43,7 +43,7 @@ public final class CustomRulesPlugin extends JavaPlugin {
         try {
             rulesConfig.load(rulesFile);
         } catch (IOException | InvalidConfigurationException e) {
-            getLogger().severe("Не удалось загрузить rules.yml!");
+            getLogger().severe("Failed to load rules.yml!");
             e.printStackTrace();
         }
 
@@ -74,8 +74,6 @@ public final class CustomRulesPlugin extends JavaPlugin {
 
         RulesCommand rulesCommand = new RulesCommand();
         getServer().getCommandMap().register("rules", rulesCommand);
-
-        getLogger().info("Команда /rules успешно зарегистрирована");
     }
 
 

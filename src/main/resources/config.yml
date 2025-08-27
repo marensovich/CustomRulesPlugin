@@ -1,10 +1,40 @@
+# Plugin messages
+# Сообщения плагина
+
+# Prefix used in plugin messages
+# Префикс, используемый в сообщениях плагина
 plugin-prefix: "&f[&x&7&F&C&F&B&2Custom Rules&f] "
 
+# Whether to display rules dialog on every join
+# Показывать диалог с правилами при каждом входе
 display-every-join: true
 
-no-rules: "&cВы отказались от правил сервер. Подключение отменено"
-no-permission: "&cУ вас нет прав на использование этой команды."
-info: "&6Используйте: &f/rules reload &6- для перезагрузки конфигурации"
-reload-success: "&aКонфигурация успешно перезагружена!"
-reload-error: "&cОшибка при перезагрузке конфигурации"
-wrong-command: "&cНеизвестная подкоманда. Используйте §f/rules reload"
+# Message shown when player declines the rules
+# Сообщение, которое показывается, если игрок отказался от правил
+no-rules: "&cYou declined the server rules. Connection cancelled"
+# Русский оригинал: "&cВы отказались от правил сервер. Подключение отменено"
+
+# Message shown when player lacks permission
+# Сообщение, которое показывается при отсутствии прав
+no-permission: "&cYou do not have permission to use this command."
+# Русский оригинал: "&cУ вас нет прав на использование этой команды."
+
+# Informational message for command usage
+# Информационное сообщение о использовании команды
+info: "&6Usage: &f/rules reload &6- to reload the configuration"
+# Русский оригинал: "&6Используйте: &f/rules reload &6- для перезагрузки конфигурации"
+
+# Message shown on successful configuration reload
+# Сообщение при успешной перезагрузке конфигурации
+reload-success: "&aConfiguration reloaded successfully!"
+# Русский оригинал: "&aКонфигурация успешно перезагружена!"
+
+# Message shown on configuration reload error
+# Сообщение при ошибке перезагрузки конфигурации
+reload-error: "&cError while reloading the configuration"
+# Русский оригинал: "&cОшибка при перезагрузке конфигурации"
+
+# Message shown when a wrong subcommand is used
+# Сообщение при использовании неизвестной подкоманды
+wrong-command: "&cUnknown subcommand. Use &f/rules reload"
+# Русский оригинал: "&cНеизвестная подкоманда. Используйте §f/rules reload"

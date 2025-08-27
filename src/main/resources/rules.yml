@@ -1,37 +1,69 @@
+# Dialog title
+# Заголовок диалога
 title:
+  # Title text
+  # Текст заголовка
   text: "Server Rules"
-#  BLACK_VALUE = 0x000000;
-#  DARK_BLUE_VALUE = 0x0000aa;
-#  DARK_GREEN_VALUE = 0x00aa00;
-#  DARK_AQUA_VALUE = 0x00aaaa;
-#  DARK_RED_VALUE = 0xaa0000;
-#  DARK_PURPLE_VALUE = 0xaa00aa;
-#  GOLD_VALUE = 0xffaa00;
-#  GRAY_VALUE = 0xaaaaaa;
-#  DARK_GRAY_VALUE = 0x555555;
-#  BLUE_VALUE = 0x5555ff;
-#  GREEN_VALUE = 0x55ff55;
-#  AQUA_VALUE = 0x55ffff;
-#  RED_VALUE = 0xff5555;
-#  LIGHT_PURPLE_VALUE = 0xff55ff;
-#  YELLOW_VALUE = 0xffff55;
-#  WHITE_VALUE = 0xffffff;
+
+  # Title color in HEX format. You can use your own colors or one of the following:
+  # Цвет заголовка в формате HEX. Можно использовать свои цвета или один из перечисленных ниже:
+  # BLACK_VALUE = 0x000000
+  # DARK_BLUE_VALUE = 0x0000aa
+  # DARK_GREEN_VALUE = 0x00aa00
+  # DARK_AQUA_VALUE = 0x00aaaa
+  # DARK_RED_VALUE = 0xaa0000
+  # DARK_PURPLE_VALUE = 0xaa00aa
+  # GOLD_VALUE = 0xffaa00
+  # GRAY_VALUE = 0xaaaaaa
+  # DARK_GRAY_VALUE = 0x555555
+  # BLUE_VALUE = 0x5555ff
+  # GREEN_VALUE = 0x55ff55
+  # AQUA_VALUE = 0x55ffff
+  # RED_VALUE = 0xff5555
+  # LIGHT_PURPLE_VALUE = 0xff55ff
+  # YELLOW_VALUE = 0xffff55
+  # WHITE_VALUE = 0xffffff
   color: "0xffaa00"
 
+# Main part of the dialog — text blocks
+# Основная часть диалога — текстовые блоки
 body:
+  # Block name is arbitrary (block1, block2, etc.)
+  # Название блока произвольное (block1, block2 и т.д.)
   block1:
+    # Block text can be a string or a list of strings
+    # Текст блока может быть строкой или списком строк
     text:
-      - "Добро пожаловать на сервер!"
-      - "Для игры на нашем сервере вы должны принять правила."
+      - "Welcome to the server!"
+      - "To play on our server, you must accept the rules."
+    # Text color in HEX format
+    # Цвет текста в формате HEX
     color: "#FFFFFF"
+
   block2:
-    text: "Нажмите 'Принять', чтобы согласиться с правилами."
+    text: "Click 'Accept' to agree to the rules."
+    # Цвет текста в формате HEX
     color: "#AAAAFF"
 
+# Dialog buttons
+# Кнопки диалога
 buttons:
+  # Accept button
+  # Кнопка согласия
   accept:
-    text: "✓ Принять"
+    # Button text
+    # Текст кнопки
+    text: "✓ Accept"
+    # Button text color in HEX format
+    # Цвет текста кнопки в формате HEX
     color: "#00FF00"
+
+  # Deny button
+  # Кнопка отказа
   deny:
-    text: "✗ Отклонить"
+    # Button text
+    # Текст кнопки
+    text: "✗ Decline"
+    # Button text color in HEX format
+    # Цвет текста кнопки в формате HEX
     color: "#FF0000"

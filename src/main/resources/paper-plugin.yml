@@ -1,19 +1,32 @@
 name: CustomRulesPlugin
-version: '1.0-SNAPSHOT'
+version: "1.0"
 main: org.marensovich.customRulesPlugin.CustomRulesPlugin
-api-version: '1.21'
+api-version: "1.21"
 authors:
   - marensovich
-prefix: CustomRulesPlugin
-description: Custom rules for new players
-website: t.me/son_of_dev228
-load: POSTWORLD
 contributors:
   - lightneron
+website: t.me/son_of_dev228
+description: A plugin that allows you to display a dialog with rules
+load: POSTWORLD
+prefix: CustomRulesPlugin
+
 permissions:
   customrules.use:
-    description: "Позволяет использовать команду /rules"
-    default: true
-  customrules.reload:
-    description: "Позволяет перезагружать конфигурацию плагина"
+    description: "Allows using the /rules command"
     default: op
+  customrules.reload:
+    description: "Allows reloading the plugin configuration"
+    default: op
+
+commands:
+  rules:
+    description: "Manage plugin rules"
+    usage: "/rules <reload>"
+    aliases: ["rules"]
+    permission: customrules.use
+    subcommands:
+      reload:
+        description: "Reload the plugin configuration"
+        usage: "/rules reload"
+        permission: customrules.reload

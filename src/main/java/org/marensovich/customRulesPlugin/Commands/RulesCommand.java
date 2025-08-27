@@ -66,12 +66,13 @@ public class RulesCommand extends BukkitCommand {
                         Objects.requireNonNull(CustomRulesPlugin.getInstance().getConfig().getString("no-permission"))));
                 return false;
             }
+        } else {
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
+                    Objects.requireNonNull(CustomRulesPlugin.getInstance().getConfig().getString("plugin-prefix"))) +
+                    ChatColor.translateAlternateColorCodes('&',
+                            Objects.requireNonNull(CustomRulesPlugin.getInstance().getConfig().getString("wrong-command"))));
+            return false;
         }
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                Objects.requireNonNull(CustomRulesPlugin.getInstance().getConfig().getString("plugin-prefix"))) +
-                ChatColor.translateAlternateColorCodes('&',
-                Objects.requireNonNull(CustomRulesPlugin.getInstance().getConfig().getString("no-permission"))));
-        return false;
     }
 
     @Override
