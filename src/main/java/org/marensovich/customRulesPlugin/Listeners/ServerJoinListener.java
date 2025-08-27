@@ -4,9 +4,9 @@ import io.papermc.paper.connection.PlayerCommonConnection;
 import io.papermc.paper.event.connection.configuration.AsyncPlayerConnectionConfigureEvent;
 import io.papermc.paper.event.player.PlayerCustomClickEvent;
 import net.kyori.adventure.key.Key;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.marensovich.customRulesPlugin.CustomRulesPlugin;
@@ -22,6 +22,13 @@ public class ServerJoinListener implements Listener {
 
     @EventHandler
     void onPlayerConfigure(AsyncPlayerConnectionConfigureEvent event) {
+
+        if (!CustomRulesPlugin.getInstance().getConfig().getBoolean("display-every-join")){
+            if (Bukkit.getOfflinePlayer(event.getConnection().getProfile().getId()).hasPlayedBefore()){
+                return;
+            }
+        }
+
         CompletableFuture<Boolean> response = new CompletableFuture<>();
         awaitingResponse.put(event.getConnection(), response);
         event.getConnection().getAudience().showDialog(JoinDialog.getDialog());
