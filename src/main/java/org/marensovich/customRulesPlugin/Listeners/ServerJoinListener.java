@@ -21,13 +21,11 @@ public class ServerJoinListener implements Listener {
 
     @EventHandler
     void onPlayerConfigure(AsyncPlayerConnectionConfigureEvent event) {
-
         if (!CustomRulesPlugin.getInstance().getConfig().getBoolean("display-every-join")){
             if (Bukkit.getOfflinePlayer(event.getConnection().getProfile().getId()).hasPlayedBefore()){
                 return;
             }
         }
-
         CompletableFuture<Boolean> response = new CompletableFuture<>();
         awaitingResponse.put(event.getConnection(), response);
         event.getConnection().getAudience().showDialog(JoinDialog.getDialog());

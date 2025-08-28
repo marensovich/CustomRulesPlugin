@@ -1,3 +1,10 @@
+![Version](https://img.shields.io/badge/Plugin%20Version-1.0-g)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/marensovich/CustomRulesPlugin)
+![GitHub Created At](https://img.shields.io/github/created-at/marensovich/CustomRulesPlugin)
+![GitHub repo size](https://img.shields.io/github/repo-size/marensovich/CustomRulesPlugin)
+![GitHub watchers](https://img.shields.io/github/watchers/marensovich/CustomRulesPlugin)
+[![wakatime](https://wakatime.com/badge/user/c1fedeb3-9e6d-4f37-ac09-6a0827a0d48a/project/7adbc7a2-1e53-4659-a467-0f3d67e4944a.svg)](https://wakatime.com/badge/user/c1fedeb3-9e6d-4f37-ac09-6a0827a0d48a/project/7adbc7a2-1e53-4659-a467-0f3d67e4944a)
+
 <div align="center">
     <h1 align="center">Custom Rules Plugin</h1>
 </div>
